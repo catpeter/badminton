@@ -1,0 +1,24 @@
+<!--miniprogram/pages/setMatch/setMatch.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="flex_row_c section">
+    <view >名称</view>
+    <input name="name" value="{{name}}"  placeholder="请输入名称" cursor-spacing='25' maxlength="11" placeholder-class="placeholder" />
+  </view>
+   <!-- todo --> 
+  <view class="flex_row_c section">
+    <view>时间</view>
+    <input name="time" value="{{time}}"  placeholder="请输入时间"  placeholder-class="placeholder" />
+  </view>
+  <!-- todo -->
+  <view class="flex_row_s section" bindtap="setAddress">
+    <view style="width:45%">地点</view>
+    <text wx:if="{{address.address}}">{{address.name}}</text>
+    <text class="form_default" wx:else>请选择地址</text>
+  </view>
+  <!-- todo -->
+  <view class="flex_row_c section">
+    <view>限制人数</view>
+    <input name="personNum" value="{{personNum}}"  placeholder="请输入人数" cursor-spacing='25' maxlength="11" placeholder-class="placeholder" />
+  </view>
+   <button class="form_btn" formType="submit">提交</button>
+</form>

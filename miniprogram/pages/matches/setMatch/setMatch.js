@@ -1,5 +1,5 @@
 // miniprogram/pages/setMatch/setMatch.js
-const baseDao = require('../../dao/base.js')
+const baseDao = require('../../../dao/base.js')
 Page({
 
   /**
@@ -16,11 +16,10 @@ Page({
 
   },
 
-  onAdd: function (data) {
-    baseDao.create('matches', data).then((res) => {
-      wx.showToast({
-        title: '新增记录成功',
-      })
+  onAdd: async function (data) {
+    const res = await baseDao.create('matches', data)
+    wx.showToast({
+      title: '新增记录成功',
     })
   },
   formSubmit: function(e) {
@@ -32,7 +31,6 @@ Page({
     console.log('form发生了reset事件')
   },
   setAddress: function () {
-    console.log(12312)
     let that = this
     wx.chooseLocation({
       success: function (res) {

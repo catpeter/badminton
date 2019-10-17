@@ -1,0 +1,9 @@
+<!--miniprogram/pages/matches/matchResult/matchResult.wxml-->
+<view style="text-align:center;">排名</view>
+<view wx:for="{{ranks}}" wx:key="index">
+  <view class="flex_row_c" style="margin:20rpx;">
+    <text>第{{index + 1}}名</text>
+    <text>{{item.name}}</text>
+    <text>净胜分:{{item.netWinPoints}}</text>
+  </view>
+</view>

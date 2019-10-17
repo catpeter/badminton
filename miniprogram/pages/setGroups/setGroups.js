@@ -14,17 +14,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     // baseDao.create('test', {name: '测试毛2'}).then((res) => {
     //   wx.showToast({
     //     title: '新增记录成功',
     //   })
     // })
-    const that = this
-    baseDao.query('users').then((res) => {
-      that.setData({
-        userList: res
-      })
+    const res = baseDao.query('users')
+    this.setData({
+      userList: res
     })
   },
   bindPickerChange1: function (e) {
@@ -39,21 +37,19 @@ Page({
       index2: e.detail.value
     })
   },
-  formSubmit:function(e) {
+  formSubmit: async function(e) {
     const data = {
       users: [this.data.userList[this.data.index1]._id, this.data.userList[this.data.index2]._id],
       name: e.detail.value.name
     }
-    baseDao.create('groups', data).then((res) => {
-      wx.showToast({
-        title: '新增记录成功',
-      })
+    const res = await baseDao.create('groups', data)
+    wx.showToast({
+      title: '新增记录成功',
     })
   },
-  onQuery: function (tables, data) {
-    baseDao.query(tables, data).then((res) => {
+  onQuery: async function (tables, data) {
+    const res = await baseDao.query(tables, data)
     console.log(res)
-    })
   },
 
   /**

@@ -1,0 +1,21 @@
+<!--miniprogram/pages/main/main.wxml-->
+    <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:210px;">
+        <block wx:for="{{matches}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item.images[0]}}" mode="scaleToFill" style="height:200px;" ></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  <view class="uploader">
+    <navigator url="../im/room/room" open-type="navigate" class="uploader-text">
+      <text>进入聊天室</text>
+    </navigator>
+  </view>
+    <view>
+    <navigator url="../setMatch/setMatch" open-type="navigate" class="uploader-text">
+      <text>新建比赛</text>
+    </navigator>
+  </view>

@@ -1,36 +1,22 @@
-// miniprogram/pages/setGames/setGames.js
-const baseDao = require('../../dao/base.js')
+// miniprogram/pages/matches/matchResult/matchResult.js
+const baseDao = require('../../../dao/base.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    ranks: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const that = this
-    // baseDao.query('groups').then((res) => {
-    //   for(let i = 0; i< res.length; i++){
-    //     for (let j = i + 1; j < res.length; j++) {
-    //       console.log(res[i], res[j])
-    //       const data = {
-    //         mainTeam: res[i]._id,
-    //         awayTeam: res[j]._id,
-    //         score: [0, 0]
-    //       }
-    //       baseDao.create('games', data).then((res) => {
-    //         wx.showToast({
-    //           title: '新增记录成功',
-    //         })
-    //       })
-    //     }      
-    //   }
-    // })
+  onLoad: async function (options) {
+    const res = await baseDao.query2('groups', { match: 'f885cb355d873d62029c6ffd7399bc70' }, 1, 100, 'winCount', 'desc', 'netWinPoints', 'desc')
+    this.setData({
+      ranks: res
+    })
   },
 
   /**

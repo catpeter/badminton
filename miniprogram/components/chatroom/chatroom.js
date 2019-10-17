@@ -25,11 +25,12 @@ Component({
     openId: '',
     scrollTop: 0,
     scrollToMessage: '',
-    hasKeyboard: false,
+    hasKeyboard: false
   },
 
   methods: {
     onGetUserInfo(e) {
+      console.log('e',e)
       this.properties.onGetUserInfo(e)
     },
 

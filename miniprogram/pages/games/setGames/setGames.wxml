@@ -1,0 +1,11 @@
+<!--miniprogram/pages/setGames/setGames.wxml-->
+<view>{{game.teams[0].name}} {{game.teams[1].name}}</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="flex_row_c section">
+    <input name="score1" value="{{game.teams[0].score}}" type= "number" placeholder="分数" cursor-spacing='25' maxlength="2" placeholder-class="placeholder" />
+  </view>
+  <view class="flex_row_c section">
+    <input name="score2" value="{{game.teams[1].score}}" type= "number" placeholder="分数" cursor-spacing='25' maxlength="2" placeholder-class="placeholder" />
+  </view>
+  <button class="form_btn" formType="submit">保存</button>
+</form>

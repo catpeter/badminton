@@ -1,0 +1,8 @@
+<!--miniprogram/pages/games/getGames/getGames.wxml-->
+<view wx:for="{{gamesList}}" key="index">
+    <navigator url="../setGames/setGames?id={{item._id}}" open-type="navigate" style="margin:20rpx;background:red">
+      <view>{{item.teams[0].name}} {{item.teams[1].name}}</view>
+      <view>{{item.teams[0].score}} {{item.teams[1].score}}</view>
+    </navigator>
+</view>
+<button>结束</button>

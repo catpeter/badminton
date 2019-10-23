@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    const res = await baseDao.query2('groups', { match: 'f885cb355d873d62029c6ffd7399bc70' }, 1, 100, 'winCount', 'desc', 'netWinPoints', 'desc')
+    const res = await baseDao.query2('groups', { match: options._id }, 1, 100, 'winCount', 'desc', 'netWinPoints', 'desc')
     this.setData({
       ranks: res
     })

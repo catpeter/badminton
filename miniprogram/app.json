@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/matches/matchResult/matchResult",
     "pages/games/getGames/getGames",
     "pages/games/setGames/setGames",
-    "pages/main/main",
     "pages/setGroups/setGroups",
     "pages/matches/setMatch/setMatch",
     "pages/index/index",
